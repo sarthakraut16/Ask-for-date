@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <title>Date pe chale?</title>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <h1 class="header_text">Can we hang out?</h1>
+    </div>
+    <p>
+    <h2 id="date">Chai pine chlogi... Please</h2>
+    </p>
+    <div class="gif_container">
+      <img src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif" alt="Cute animated illustration" />
+    </div>
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">
+        No
+      </button>
+      <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+      <script>
+        let yesss = document.getElementById("yesButton").addEventListener("click",()=>{
+          confetti(); 
+        })
+        function nextPage() {
+          window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+          var x =
+            Math.random() *
+            (window.innerWidth -
+              document.getElementById("noButton").offsetWidth);
+          var y =
+            Math.random() *
+            (window.innerHeight -
+              document.getElementById("noButton").offsetHeight);
+          document.getElementById("noButton").style.left = `${x}px`;
+          document.getElementById("noButton").style.top = `${y}px`;
+        }
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>
